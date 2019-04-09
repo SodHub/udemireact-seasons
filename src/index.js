@@ -49,9 +49,8 @@ class App extends React.Component  {
     //getDerivedStateFromProps
    // shouldComponentUpdate
 
-    // return jsx here only
-    render() {
 
+    renderContent () {
         if (this.state.errorMessage &&  !this.state.lat)  {
             return <div>
                 err: {this.state.errorMessage}
@@ -66,7 +65,11 @@ class App extends React.Component  {
             return <Spinner message="Please allow geolocation request"/>;
         }
 
+    }
 
+    // return jsx here only
+    render() {
+      return  <div className="red-border">{this.renderContent()}</div>
 
     }
 }
